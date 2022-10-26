@@ -52,5 +52,23 @@ namespace Calculator.Tests
             // Then
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void TestSixDividedByTwoIsThree() 
+        {
+            // Given
+            int a = 6;
+            int b = 2;
+            int expected = 3;
+            Calculator calculator = new Calculator();
+
+            // When
+            int actual = calculator.Divide(a, b);
+
+            // Then
+            Assert.Equal(expected, actual);
+        }
+
+
     }
 }
