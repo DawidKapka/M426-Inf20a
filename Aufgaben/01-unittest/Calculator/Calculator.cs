@@ -18,5 +18,14 @@ namespace Calculator
         {
             return multiplicant * multiplier;
         }
+
+        public int Divide(int divident, int divisor) 
+        {
+            if (divisor == 0) 
+            {
+                throw new ArgumentException("Division by 0 is not allowed");
+            }
+            return divident / divisor;
+        } 
     }
 }
