@@ -7,6 +7,11 @@ namespace Statistics
     {
         public double Mean(List<int> numbers)
         {
+            if (numbers.Count == 0) 
+            {
+                throw new ArgumentException("Number list cannot be empty");
+            }
+
             int sum = 0;
             double mean = 0.0;
 
