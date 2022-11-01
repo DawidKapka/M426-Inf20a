@@ -40,5 +40,40 @@ namespace Statistics.Tests
                 average.Mean(numbers);
             });
         }
+
+        [Fact]
+        public void TestMedianForOddNumberOfElements()
+        {
+            List<int> numbers = new List<int> { 5, 3, 2, 4, 1 };
+            double expected = 3;
+            Average average = new Average();
+
+            double actual = average.Median(numbers);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestMedianForEvenNumberOfElements() 
+        {
+            List<int> numbers = new List<int> { 1, 2, 4, 3 };
+            double expected = 2.5;
+            Average average = new Average();
+
+            double actual = average.Median(numbers);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void TestMedianForNoElements() 
+        {
+            List<int> numbers = new List<int> {};
+            Average average = new Average();
+
+            Assert.Throws<ArgumentException>(() => {
+                average.Median(numbers);
+            });
+        }
     }
 }
